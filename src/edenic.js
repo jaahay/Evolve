@@ -1259,7 +1259,9 @@ const edenicModules = {
         sacred_smelter: {
             id: 'eden-sacred_smelter',
             title(){ return loc('eden_sacred_smelter_title'); },
-            desc(){ return `<div>${loc('eden_sacred_smelter_title')}</div><div class="has-text-special">${loc('requires_power')}</div>`; },
+            desc(){ 
+                return `<div>${loc('eden_sacred_smelter_title')}</div><div class="has-text-special">${loc('requires_power')}</div>`; 
+            },
             reqs: { elysium: 7 },
             cost: {
                 Money(offset){ return spaceCostMultiplier('sacred_smelter', offset, 625000000, 1.25, 'eden'); },
@@ -1269,7 +1271,7 @@ const edenicModules = {
             },
             effect(){
                 let desc = `<div>${loc('interstellar_stellar_forge_effect3',[$(this)[0].smelting()])}</div>`;
-                if (global.tech['elysium'] && global.tech.elysium >= 19){
+                if (global.tech['elysium'] && global.tech.elysium >= 18){
                     desc += `<div>${loc('city_foundry_effect1',[jobScale(3)])}</div>`;
                 }
                 return `${desc}<div class="has-text-caution">${loc('minus_power',[$(this)[0].powered()])}</div>`;
