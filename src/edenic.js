@@ -1259,9 +1259,7 @@ const edenicModules = {
         sacred_smelter: {
             id: 'eden-sacred_smelter',
             title(){ return loc('eden_sacred_smelter_title'); },
-            desc(){ 
-                return `<div>${loc('eden_sacred_smelter_title')}</div><div class="has-text-special">${loc('requires_power')}</div>`; 
-            },
+            desc(){ return `<div>${loc('eden_sacred_smelter_title')}</div><div class="has-text-special">${loc('requires_power')}</div>`; },
             reqs: { elysium: 7 },
             cost: {
                 Money(offset){ return spaceCostMultiplier('sacred_smelter', offset, 625000000, 1.25, 'eden'); },
